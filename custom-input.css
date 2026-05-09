@@ -1,0 +1,17 @@
+.custom-input {
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: 1px solid var(--glass-border);
+    background: rgba(0,0,0,0.1);
+    color: var(--text-color);
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s;
+}
+body.dark .custom-input {
+    background: rgba(0,0,0,0.3);
+    color: white;
+}
+.custom-input:focus {
+    border-color: var(--primary-color);
+}

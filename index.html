@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mô Phỏng Thuật Toán</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark">
+    <div id="background-animation"></div>
+    
+    <header class="glass sticky-header">
+        <div class="logo">AlgoViz</div>
+        <button id="theme-toggle" class="btn glass-btn">☀️ Chế Độ Sáng</button>
+    </header>
+
+    <main>
+        <!-- Homepage View -->
+        <section id="home-view" class="view active">
+            <div class="hero">
+                <h1 class="gradient-text">Mô Phỏng Thuật Toán Trực Quan</h1>
+                <p>Ảnh động tương tác để hiểu rõ cấu trúc dữ liệu và thuật toán.</p>
+            </div>
+            
+            <div class="card-grid">
+                <div class="card glass" data-algo="bubbleSort">
+                    <div class="card-icon">🫧</div>
+                    <h3>Sắp Xếp Nổi Bọt</h3>
+                    <p>Thuật toán sắp xếp O(n²).</p>
+                    <button class="btn primary-btn">Bắt Đầu</button>
+                </div>
+                <div class="card glass" data-algo="selectionSort">
+                    <div class="card-icon">🎯</div>
+                    <h3>Sắp Xếp Chọn</h3>
+                    <p>Thuật toán sắp xếp O(n²).</p>
+                    <button class="btn primary-btn">Bắt Đầu</button>
+                </div>
+                <div class="card glass" data-algo="binarySearch">
+                    <div class="card-icon">🔍</div>
+                    <h3>Tìm Kiếm Nhị Phân</h3>
+                    <p>Thuật toán tìm kiếm O(log n).</p>
+                    <button class="btn primary-btn">Bắt Đầu</button>
+                </div>
+                <div class="card glass" data-algo="stackQueue">
+                    <div class="card-icon">🥞</div>
+                    <h3>Ngăn Xếp & Hàng Đợi</h3>
+                    <p>Cấu trúc dữ liệu cơ bản.</p>
+                    <button class="btn primary-btn">Bắt Đầu</button>
+                </div>
+                <div class="card glass" data-algo="graph">
+                    <div class="card-icon">🕸️</div>
+                    <h3>Duyệt Đồ Thị</h3>
+                    <p>Thuật toán duyệt đồ thị BFS / DFS.</p>
+                    <button class="btn primary-btn">Bắt Đầu</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Visualizer View -->
+        <section id="visualizer-view" class="view">
+            <div class="viz-header">
+                <button id="back-btn" class="btn glass-btn">⬅ Quay Lại</button>
+                <h2 id="viz-title">Thuật Toán</h2>
+            </div>
+
+            <div class="viz-layout">
+                <div class="viz-main glass">
+                    <div id="custom-input-container" class="controls glass" style="margin-bottom: 10px; display: flex; flex-wrap: wrap; gap: 10px; padding: 15px; border-radius: 12px; justify-content: center;"></div>
+                    <div id="visualization-area"></div>
+                    <div class="controls glass">
+                        <button id="play-btn" class="btn icon-btn">▶ Chạy</button>
+                        <button id="pause-btn" class="btn icon-btn">⏸ Tạm Dừng</button>
+                        <button id="reset-btn" class="btn icon-btn">🔄 Đặt Lại</button>
+                        <button id="random-btn" class="btn icon-btn">🎲 Ngẫu Nhiên</button>
+                        <div class="speed-control">
+                            <label for="speed-slider">Tốc Độ:</label>
+                            <input type="range" id="speed-slider" min="10" max="1000" value="500">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="viz-sidebar">
+                    <div class="glass panel">
+                        <h3>Thống Kê</h3>
+                        <p id="stat-comparisons">Số Lần So Sánh: 0</p>
+                        <p id="stat-swaps">Hoán Đổi: 0</p>
+                        <p id="stat-time">Thời Gian: 0.0s</p>
+                    </div>
+                    <div class="glass panel pseudocode-panel">
+                        <h3>Giả Mã</h3>
+                        <pre id="pseudocode-content">Chọn một thuật toán...</pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="glass">
+        <p>Algorithm Visualizer Project &copy; 2026</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="algorithms/bubbleSort.js"></script>
+    <script src="algorithms/selectionSort.js"></script>
+    <script src="algorithms/binarySearch.js"></script>
+    <script src="algorithms/stackQueue.js"></script>
+    <script src="algorithms/graph.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
